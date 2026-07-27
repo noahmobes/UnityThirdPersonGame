@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: fcf9968190d43184db650ba403da3dd7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &267268205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b1f30199361544245ae3f2742b34191d, type: 3}
+  m_PrefabInstance: {fileID: 972340268}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +348,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2843909369972686622, guid: b1f30199361544245ae3f2742b34191d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 83d36a04a1a4f1c4bad1e2b1c821767e, type: 2}
     - target: {fileID: 919132149155446097, guid: b1f30199361544245ae3f2742b34191d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -353,13 +362,60 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b1f30199361544245ae3f2742b34191d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1151922909}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1f30199361544245ae3f2742b34191d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 972340271}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1f30199361544245ae3f2742b34191d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 972340270}
   m_SourcePrefab: {fileID: 100100000, guid: b1f30199361544245ae3f2742b34191d, type: 3}
 --- !u!4 &972340269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b1f30199361544245ae3f2742b34191d, type: 3}
   m_PrefabInstance: {fileID: 972340268}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &972340270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267268205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888961fbf6b5914418edcc9f37a6672e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThirdPersonMovement
+  cameraTransform: {fileID: 1151922909}
+  movementSpeed: 5
+  jumpHeight: 1.5
+  gravity: -9.81
+--- !u!143 &972340271
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267268205}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.6
+  m_Radius: 0.4
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &1151922908
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +428,7 @@ GameObject:
   - component: {fileID: 1151922912}
   - component: {fileID: 1151922911}
   - component: {fileID: 1151922910}
+  - component: {fileID: 1151922913}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: Untagged
@@ -387,13 +444,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151922908}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 1.326}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 972340269}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1151922910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,6 +554,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1151922913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151922908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77db5c569c4719343801dbb345742fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThirdPersonCamera
+  player: {fileID: 972340269}
+  rotationSpeed: 90
+  cameraLookOffset: {x: 0, y: 1.5, z: 0}
 --- !u!1 &1762230994
 GameObject:
   m_ObjectHideFlags: 0
