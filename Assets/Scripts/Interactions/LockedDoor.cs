@@ -13,14 +13,17 @@ public class LockedDoor :
     private Vector3 openOffset = new Vector3(0f, 3f, 0f);
     private bool isOpen;
     private bool isMoving;
+    private bool isLocked = true;
     public void Interact()
     {      
         // Will not trigger if the door is already moving or if the player does not have a key in their inventory
-        if (isMoving || !Managers.Inventory.HasItem("key"))
+        if (isMoving || (!Managers.Inventory.HasItem("key") && isLocked))
         {
             return;
         }
         StartCoroutine(ToggleDoor());
+        Managers.Inventory.ConsumeItem("key");
+        isLocked = false;
     }
 
     private IEnumerator ToggleDoor()
