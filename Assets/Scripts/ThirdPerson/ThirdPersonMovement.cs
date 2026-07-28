@@ -58,11 +58,16 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 cameraForward = cameraTransform.forward;
             cameraForward.y = 0f;
             cameraForward.Normalize();
+
+            // Vector3 cameraForward = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized;
+            // Vector3 cameraRight = Vector3.ProjectOnPlane(cameraTransform.right, Vector3.up).normalized;
+
+            movementDirection = (cameraRight * moveInput.x) + (cameraForward * moveInput.y);
  
             // Calculate movement relative to the camera.
-            movementDirection =
-                (cameraRight * moveInput.x) +
-                (cameraForward * moveInput.y);
+            // movementDirection =
+            //     (cameraRight * moveInput.x) +
+            //     (cameraForward * moveInput.y);
  
             movementDirection.Normalize();
             
