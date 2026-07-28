@@ -1,13 +1,9 @@
 using System.Collections;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 public class LockedDoor :
     MonoBehaviour,
     IInteractable
 {
-    [SerializeField]
-    private float openAngle = 90f;
     [SerializeField]
     private float openSpeed = 2f;
     [SerializeField]

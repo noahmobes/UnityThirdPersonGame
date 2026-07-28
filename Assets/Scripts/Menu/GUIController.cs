@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
 
 public class GameGuiController : MonoBehaviour
 {
