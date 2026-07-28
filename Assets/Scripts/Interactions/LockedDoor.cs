@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 public class LockedDoor :
     MonoBehaviour,
@@ -12,7 +13,7 @@ public class LockedDoor :
     [SerializeField]
     private float moveSpeed = 2f;
     [SerializeField]
-    private GameObject requiredItem;
+    private GameObject requiredItemPrefab;
     [SerializeField]
     private int requiredItemCount = 1;
     [SerializeField]
@@ -24,18 +25,21 @@ public class LockedDoor :
     public void Interact()
     {      
         // Will not trigger if the door is already moving or if the player does not have the required item in their inventory
-        if (isMoving || (!Managers.Inventory.HasItem(requiredItem.gameObject.name) && isLocked))
+        if (isMoving || (!Managers.Inventory.HasItem(requiredItemPrefab.name) && isLocked))
         {
             return;
         }
 
         if (isLocked)
         {
-            if (Managers.Inventory.GetItemCount(requiredItem.gameObject.name) >= requiredItemCount)
+            if (Managers.Inventory.GetItemCount(requiredItemPrefab.name) >= requiredItemCount)
             {
-                for (int i = 0; i < requiredItemCount; i++)
+                if (consumeRequiredItem)
                 {
-                    Managers.Inventory.ConsumeItem(requiredItem.gameObject.name);
+                    for (int i = 0; i < requiredItemCount; i++)
+                    {
+                        Managers.Inventory.ConsumeItem(requiredItemPrefab.name);
+                    }
                 }
                 StartCoroutine(ToggleDoor());
                 isLocked = false;
