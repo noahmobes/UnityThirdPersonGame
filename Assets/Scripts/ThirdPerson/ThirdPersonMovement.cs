@@ -45,6 +45,9 @@ public class ThirdPersonMovement : MonoBehaviour
  
     private void Update()
     {        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
         if (cameraTransform == null || moveAction == null || jumpAction == null)
         {
             return;

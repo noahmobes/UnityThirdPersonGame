@@ -1759,9 +1759,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 445390098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57afb2e2acee514d877c7b80b0be181, type: 3}
+  m_Script: {fileID: 11500000, guid: d80115a31ab41c24eacf1cc6834b5301, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NewGameGuiController
+  m_EditorClassIdentifier: Assembly-CSharp::GameGuiController
   sceneManager: {fileID: 459057783}
   settingsMenu: {fileID: 445390098}
   player: {fileID: 80734203}
@@ -3056,7 +3056,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 445390103}
-        m_TargetAssemblyTypeName: NewGameGuiController, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameGuiController, Assembly-CSharp
         m_MethodName: LoadStartScene
         m_Mode: 1
         m_Arguments:
@@ -5358,7 +5358,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 445390103}
-        m_TargetAssemblyTypeName: NewGameGuiController, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameGuiController, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -5859,7 +5859,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 445390103}
-        m_TargetAssemblyTypeName: NewGameGuiController, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameGuiController, Assembly-CSharp
         m_MethodName: CloseSettings
         m_Mode: 1
         m_Arguments:

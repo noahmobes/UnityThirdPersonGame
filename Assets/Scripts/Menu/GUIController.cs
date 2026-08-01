@@ -13,12 +13,6 @@ public class GameGuiController : MonoBehaviour
     public GameObject hud;
     private InputAction openSettingsAction;
 
-    
-    public void Test()
-    {
-        Debug.Log("testing");
-    }
-
     private void Start()
     {
         settingsMenu.SetActive(false);
