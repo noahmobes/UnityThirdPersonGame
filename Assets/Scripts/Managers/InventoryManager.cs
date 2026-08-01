@@ -5,12 +5,10 @@ public class InventoryManager : MonoBehaviour, IGameManager
     public ManagerStatus Status { get; private set; }
     private readonly Dictionary<string, int> items =
         new Dictionary<string, int>();
-    public string EquippedItem { get; private set; }
     public void Startup()
     {
         Debug.Log("Inventory manager starting.");
         items.Clear();
-        EquippedItem = null;
         Status = ManagerStatus.Started;
     }
     public void AddItem(string itemName)
@@ -37,10 +35,6 @@ public class InventoryManager : MonoBehaviour, IGameManager
         if (items[itemName] <= 0)
         {
             items.Remove(itemName);
-            if (EquippedItem == itemName)
-            {
-                EquippedItem = null;
-            }
         }
         DisplayItems();
         return true;
@@ -61,24 +55,7 @@ public class InventoryManager : MonoBehaviour, IGameManager
     {
         return new List<string>(items.Keys);
     }
-    public bool EquipItem(string itemName)
-    {
-        if (!items.ContainsKey(itemName))
-        {
-            Debug.Log($"Cannot equip {itemName}. Item not found.");
-            EquippedItem = null;
-            return false;
-        }
-        if (EquippedItem == itemName)
-        {
-            EquippedItem = null;
-            Debug.Log("Unequipped item.");
-            return false;
-        }
-        EquippedItem = itemName;
-        Debug.Log($"Equipped item: {itemName}");
-        return true;
-    }
+    
     private void DisplayItems()
     {
         string itemDisplay = "Inventory: ";

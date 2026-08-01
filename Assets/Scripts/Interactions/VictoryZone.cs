@@ -8,11 +8,6 @@ public class VictoryZone : MonoBehaviour
     public string endSceneName = "EndScene";
     private void OnTriggerEnter(Collider other)
     {
-        // if (other.GetComponent<PlayerInteraction>() && Managers.Inventory.HasItem(victoryItem.name))
-        // {
-        //     SceneManager.LoadScene(endSceneName);
-        // }
-
         if (other.tag == "Player" && Managers.Inventory.HasItem(victoryItem.name))
         {
             SceneManager.LoadScene(endSceneName);
