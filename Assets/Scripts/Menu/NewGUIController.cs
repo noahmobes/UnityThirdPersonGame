@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GameGuiController : MonoBehaviour
+public class NewGameGuiController : MonoBehaviour
 {
     [Header("Scene Manager")]
     public SceneLoader sceneManager;
