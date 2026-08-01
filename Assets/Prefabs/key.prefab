@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa04bbca94c828d45bb5893d0a49a1df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleItem
-  itemName: key
+  prefab: {fileID: 6093626725447442643}
 --- !u!136 &5670807302040809601
 CapsuleCollider:
   m_ObjectHideFlags: 0

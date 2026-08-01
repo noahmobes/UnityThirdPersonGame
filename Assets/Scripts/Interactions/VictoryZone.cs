@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
  
-public class ExitZone : MonoBehaviour
+public class VictoryZone : MonoBehaviour
 {
     [SerializeField]
     private GameObject victoryItem;
