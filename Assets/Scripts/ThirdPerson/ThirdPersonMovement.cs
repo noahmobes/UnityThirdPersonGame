@@ -17,6 +17,12 @@ public class ThirdPersonMovement : MonoBehaviour
     private InputAction jumpAction;
     private float verticalVelocity;
     private Animator animator;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
  
     private void Awake()
     {
@@ -38,7 +44,7 @@ public class ThirdPersonMovement : MonoBehaviour
     }
  
     private void Update()
-    {
+    {        
         if (cameraTransform == null || moveAction == null || jumpAction == null)
         {
             return;
